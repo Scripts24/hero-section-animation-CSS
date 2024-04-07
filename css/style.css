@@ -1,10 +1,151 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+    padding        : 0;
+    margin         : 0;
+    box-sizing     : border-box;
     text-decoration: none;
-    list-style: none;
-    font-family: "Montserrat Alternates", sans-serif;
+    list-style     : none;
+    font-family    : "Montserrat Alternates", sans-serif;
+}
+
+section {
+    width           : 100vw;
+    height          : 100vh;
+    position        : relative;
+    background-color: black;
+    overflow-x      : hidden;
+}
+
+.bg-img {
+    width    : 100%;
+    height   : 100%;
+    opacity  : 0;
+    transform: scale(0);
+    animation: grow 2s ease-out .8s forwards;
+}
+
+.bg-img img {
+    width     : 100%;
+    height    : 100%;
+    object-fit: cover;
+}
+
+nav {
+    width          : 100%;
+    position       : absolute;
+    left           : 0;
+    top            : 0;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    padding        : 1rem 3.5rem;
+    transition     : all .3s;
+    opacity        : 0;
+    animation      : animate3 3s ease forwards;
+}
+
+nav .logo a {
+    font-size  : 1.8rem;
+    font-weight: 600;
+    color      : beige;
+}
+
+nav ul {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    gap            : 1rem;
+}
+
+nav ul li a {
+    color         : beige;
+    font-size     : 1.2rem;
+    text-transform: capitalize;
+    transition    : all .3s;
+}
+
+nav ul li a:hover {
+    color: coral;
+}
+
+.text {
+    position : absolute;
+    top      : 40%;
+    padding  : 0 3rem;
+    font-size: 1.4rem;
+    color    : antiquewhite;
+}
+
+.text h1 {
+    font-weight: 500;
+    opacity    : 0;
+    animation  : animate 3s ease forwards;
+}
+
+.text h1 span {
+    color      : coral;
+    font-weight: 700;
+    opacity    : 0;
+    animation  : animate2 1s ease-in 2s forwards;
+    display    : inline-block;
+    transform  : translateX(50px);
+}
+
+.description {
+    width    : 18rem;
+    font-size: 1.2rem;
+    right    : 2%;
+    color    : antiquewhite;
+    opacity  : 0;
+    animation: animate2 2s ease 2s forwards;
+    transform: translateX(50px);
+}
+
+.line {
+    width           : 0;
+    height          : 0.1rem;
+    position        : absolute;
+    background-color: antiquewhite;
+    top             : 39%;
+    left            : 50%;
+    transform       : translate(-50%, -50%);
+    animation       : grow2 2s ease 2s forwards;
+}
+
+@keyframes grow2 {
+    100% {
+        width: 92%;
+    }
+}
+
+@keyframes grow {
+    10% {
+        transform: scale(.1);
+        opacity  : 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity  : 1;
+    }
+}
+
+@keyframes animate {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animate2 {
+    100% {
+        transform: translateX(0);
+        opacity  : 1;
+    }
+}
+
+@keyframes animate3 {
+    100% {
+        opacity: 1;
+    }
 }
